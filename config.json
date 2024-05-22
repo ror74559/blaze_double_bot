@@ -1,0 +1,17 @@
+{
+    "username": "",
+    "password": "",
+    "bet_amount": ,
+    "stop_loss_ratio": ,
+    "stop_win_ratio": ,
+    "strategies": {
+        "black": [
+            ["B", "R", "B", "R", "B"],
+            ["R", "R", "R", "R", "R"]
+        ],
+        "red": [
+            ["R", "B", "R", "B", "R"],
+            ["B", "B", "B", "B", "B"]
+        ]
+    }
+}
