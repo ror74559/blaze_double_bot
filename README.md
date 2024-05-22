@@ -94,7 +94,7 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
 ```
 Essa estratégia é apenas um exemplo, podendo ser configurada nesse mesmo padrão, as listas podem
 conter até 20 elementos, Use apenas "R" para vermelho "B" para preto.
-As listas que ficaren dentro de "red" serão para apostar no vermelho e as que ficarem em "black" para apostar no preto.
+As listas que ficarem dentro de "red" serão para apostar no vermelho e as que ficarem em "black" para apostar no preto.
 
 ---
 ## Uso
