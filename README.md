@@ -46,7 +46,7 @@ To use the Blaze Double Bot, you need to configure your credentials and other se
     }
 }
 
-
+```
 ## Usage
 
 To run the bot:
