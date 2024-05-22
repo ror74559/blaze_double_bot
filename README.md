@@ -13,7 +13,9 @@ This Python script automates the betting process on the Blaze Double website usi
 To install and use the bot, follow these steps:
 
 git clone https://github.com/seu-usuario/blaze-double-bot.git
+
 cd blaze-double-bot
+
 pip install -r requirements.txt
 
 
