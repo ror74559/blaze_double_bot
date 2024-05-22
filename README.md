@@ -68,7 +68,7 @@ python bot.py
 
 If you find this project helpful, consider supporting it by making a donation. Your contribution will help me maintain and improve this bot.
 
-[Donate via PayPal]([https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA))
+[Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA)
 
 ---
 
@@ -148,7 +148,7 @@ python bot.py
 
 Se você achar este projeto útil, considere apoiá-lo fazendo uma doação. Sua contribuição ajudará a manter e melhorar este bot.
 
-[Doar via PayPal]([https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA))
+[Doar via PayPal](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA)
 
 ---
 
