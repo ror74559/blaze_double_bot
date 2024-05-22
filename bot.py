@@ -218,7 +218,7 @@ Final Balance: R$ {round(self.current_balance, 2)}
 
 def main():
     parser = argparse.ArgumentParser(description='Blaze Double Bot')
-    parser.add_argument('--config', type=str, default='config.json', help='Path to the JSON configuration file')
+    parser.add_argument('--config', type=str, default='config.json', help='config.json')
     args = parser.parse_args()
 
     with open(args.config, 'r') as f:
