@@ -31,9 +31,9 @@ To use the Blaze Double Bot, you need to configure your credentials and other se
 {
     "username": "your blaze username",
     "password": "your blaze password",
-    "bet_amount": "bet amount value type float",
-    "stop_loss_ratio": "percentage of initial bankroll to stop on losses type float",
-    "stop_win_ratio": "percentage of initial bankroll to stop on wins type float",
+    "bet_amount":,
+    "stop_loss_ratio": ,
+    "stop_win_ratio":,
     "strategies": {
         "red": [
             ["B", "R", "B", "R", "B"],
@@ -47,6 +47,14 @@ To use the Blaze Double Bot, you need to configure your credentials and other se
 }
 
 ```
+
+- **username**: Your username or email registered on Blaze Double.
+- **password**: Your password to access Blaze Double.
+- **bet_amount**: The amount of the bet to be placed in each round.
+- **stop_loss_ratio**: The multiplication factor of the initial balance indicating the loss limit. The bot will stop betting if the balance drops below this limit.
+- **stop_win_ratio**: The multiplication factor of the initial balance indicating the win limit. The bot will stop betting if the balance reaches or exceeds this limit.
+- **strategies**: Pre-defined betting strategies with sequences of colors (black = "B", red = "R"). You can add as many strategies as you want here.
+
 ## Usage
 
 To run the bot:
@@ -103,9 +111,9 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
 {
     "username": "seu usuario da blaze",
     "password": "sua senha na Blaze",
-    "bet_amount": "valor das apostas type float" ,
-    "stop_loss_ratio": "porcentagem da banca inicial para parada quando houver perdas type float",
-    "stop_win_ratio": "porcentagem da banca inicial para parada quando houver ganhos type float",
+    "bet_amount": ,
+    "stop_loss_ratio": ,
+    "stop_win_ratio": ,
     "strategies": {
         "red": [
             ["B", "R", "B", "R", "B"],
@@ -118,9 +126,12 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
     }
 }
 ```
-Essa estratégia é apenas um exemplo, podendo ser configurada nesse mesmo padrão, as listas podem
-conter até 20 elementos, Use apenas "R" para vermelho "B" para preto.
-As listas que ficarem dentro de "red" serão para apostar no vermelho e as que ficarem em "black" para apostar no preto.
+- **username**: Seu nome de usuário ou e-mail cadastrado no Blaze Double.
+- **password**: Sua senha para acessar o Blaze Double.
+- **bet_amount**: O valor da aposta que será realizada em cada rodada.
+- **stop_loss_ratio**: O fator de multiplicação do saldo inicial que indica o limite de perda. O bot irá parar de apostar se o saldo cair abaixo desse limite.
+- **stop_win_ratio**: O fator de multiplicação do saldo inicial que indica o limite de ganho. O bot irá parar de apostar se o saldo atingir ou ultrapassar esse limite.
+- **strategies**: Estratégias de aposta pré-definidas com sequências de cores (preto = "B", vermelho = "R"). Você pode adicionar quantas estratégias quiser aqui.
 
 ---
 ## Uso
