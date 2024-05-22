@@ -76,7 +76,7 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
 ```json
 {
     "username": "seu usuario da blaze",
-    "password": "sua senha na BlazeL",
+    "password": "sua senha na Blaze",
     "bet_amount": "valor das apostas type float" ,
     "stop_loss_ratio": "porcentagem da banca inicial para parada quando houver perdas type float",
     "stop_win_ratio": "porcentagem da banca inicial para parada quando houver ganhos type float",
