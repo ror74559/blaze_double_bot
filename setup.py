@@ -9,7 +9,7 @@ setup(
     long_description=readme,
     long_description_content_type='text/markdown',
     author_email='ror74559@gmail.com',
-    description='This Python script automates the betting process on the Blaze Double',
+    description='This Python library automates the betting process on the Blaze Double',
     packages=find_packages(),
     install_requires=[
         'undetected_chromedriver',
