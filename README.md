@@ -77,9 +77,9 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
 {
     "username": "seu usuario da blaze",
     "password": "sua senha na BlazeL",
-    "bet_amount": valor das apostas,
-    "stop_loss_ratio": porcentagem da banca inicial para parada quando houver perdas,
-    "stop_win_ratio": porcentagem da banca inicial para parada quando houver ganhos,
+    "bet_amount": "valor das apostas type float" ,
+    "stop_loss_ratio": "porcentagem da banca inicial para parada quando houver perdas type float",
+    "stop_win_ratio": "porcentagem da banca inicial para parada quando houver ganhos type float",
     "strategies": {
         "red": [
             ["B", "R", "B", "R", "B"],
@@ -91,7 +91,7 @@ Para usar o Blaze Double Bot, você precisará configurar suas credenciais e out
         ]
     }
 }
-
+```
 Essa estratégia é apenas um exemplo, podendo ser configurada nesse mesmo padrão, as listas podem
 conter até 20 elementos, Use apenas "R" para vermelho "B" para preto.
 As listas que ficaren dentro de "red" serão para apostar no vermelho e as que ficarem em "black" para apostar no preto.
