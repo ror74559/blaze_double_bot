@@ -1,3 +1,4 @@
+import atexit
 import json
 import argparse
 import undetected_chromedriver as uc
@@ -17,7 +18,7 @@ class BlazeDoubleBot:
         self.strategies = config['strategies']
 
         self.color_dict = {'black': 'B', 'red': 'R', 'white': 'W'}
-        print('Initializing the robot ...t')
+        print('Initializing the robot ...')
         chrome_options = Options()
         chrome_options.add_argument("--headless=new")
         self.driver = uc.Chrome(options=chrome_options)
@@ -34,6 +35,9 @@ class BlazeDoubleBot:
         self.stop_loss = self.initial_balance * self.stop_loss_ratio
         self.stop_win = self.initial_balance * self.stop_win_ratio
 
+        # Registra a função para fechar o driver ao sair
+        atexit.register(self.close_driver)
+
     def login(self):
         sleep(5)
         self.driver.find_element(By.XPATH, "//a[@class='link']").click()
@@ -48,6 +52,10 @@ class BlazeDoubleBot:
         self.driver.find_element(By.CLASS_NAME, "red.submit.shared-button-custom.css-12vlaew").click()
         print('Logging in')
         sleep(5)
+
+    def close_driver(self):
+        self.driver.close()  # Fecha apenas a janela do navegador
+        self.driver.quit()   # Encerra completamente o driver
 
     def is_time_to_bet(self):
         timer_text = self.driver.find_element(By.ID, "roulette-timer").text.lower()
@@ -177,44 +185,50 @@ Final Balance: R$ {round(self.current_balance, 2)}
                 pass
 
     def run(self):
-        self.print_initialization_text()
-        strategy_size = self.get_strategy_size()
-        while True:
-            if self.stop_loss <= self.current_balance <= self.stop_win and self.current_balance - self.bet_amount >= 0:
-                if self.wait_for_next_round():
-                    history = self.get_history_api(strategy_size)
-                    print(history)
-                    color = self.strategy(history)
-                    if color:
-                        self.choose_color(color)
-                        self.place_bet(self.bet_amount)
-                        self.print_bet(color)
-                        self.wait_for_next_round()
-                        sleep(1)
+        try:  
+            self.print_initialization_text()
+            strategy_size = self.get_strategy_size()
+            while True:
+                if self.stop_loss <= self.current_balance <= self.stop_win and self.current_balance - self.bet_amount >= 0:
+                    if self.wait_for_next_round():
                         history = self.get_history_api(strategy_size)
-                        if history[0] != self.color_dict[color]:
-                            print('Gale 1')
-                            self.place_bet(2 * self.bet_amount)
+                        color = self.strategy(history)
+                        if color:
+                            self.choose_color(color)
+                            self.place_bet(self.bet_amount)
+                            self.print_bet(color)
                             self.wait_for_next_round()
                             sleep(1)
                             history = self.get_history_api(strategy_size)
-                            if history[0] != self.color_dict[color]:
-                                print('Gale 2')
-                                self.place_bet(4 * self.bet_amount)
+                            if history[0] != self.color_dict[color] and self.stop_loss <= self.current_balance <= self.stop_win and self.current_balance - self.bet_amount >= 0:
+                                print('Gale 1')
+                                self.place_bet(2 * self.bet_amount)
                                 self.wait_for_next_round()
                                 sleep(1)
                                 history = self.get_history_api(strategy_size)
-                        self.print_bet_result(history, color)
-                        sleep(6)
-                        self.current_balance = self.get_balance()
-                        print(self.current_balance)
-            else:
-                self.print_final_text()
-                self.driver.close()
-                sleep(3)
-                self.driver.quit()
-                break
-            sleep(2)
+                                if history[0] != self.color_dict[color] and self.stop_loss <= self.current_balance <= self.stop_win and self.current_balance - self.bet_amount >= 0:
+                                    print('Gale 2')
+                                    self.place_bet(4 * self.bet_amount)
+                                    self.wait_for_next_round()
+                                    sleep(1)
+                                    history = self.get_history_api(strategy_size)
+                            self.print_bet_result(history, color)
+                            sleep(8)
+                            self.current_balance = self.get_balance()
+                            print(self.current_balance)
+                            print('Waiting 5 rounds to restart analysis ...')
+                            sleep(150)
+                            print('Analyzes restarted!\n\n')
+                else:
+                    self.print_final_text()
+                    self.close_driver()
+                    break
+                sleep(2)
+        except Exception as e:
+            print(e)
+            self.print_final_text()
+            self.close_driver()
+            break
 
 def main():
     parser = argparse.ArgumentParser(description='Blaze Double Bot')
@@ -223,6 +237,13 @@ def main():
 
     with open(args.config, 'r') as f:
         config = json.load(f)
+
+    bot = BlazeDoubleBot(config)
+    bot.run()
+
+if __name__ == "__main__":
+    main()
+
 
     bot = BlazeDoubleBot(config)
     bot.run()
