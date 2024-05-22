@@ -69,6 +69,32 @@ pip install -r requirements.txt
 
 ## Uso
 
+# Como usar o arquivo JSON no Blaze Double Bot
+
+Para usar o Blaze Double Bot, você precisará configurar suas credenciais e outras configurações através de um arquivo JSON. Siga as instruções abaixo para configurar e utilizar o bot:
+
+1. **Crie um arquivo `config.json`** com o seguinte conteúdo:
+
+```json
+{
+    "username": "your_email@gmail.com",
+    "password": "**//12raf**L",
+    "bet_amount": 0.1,
+    "stop_loss_ratio": 0.9,
+    "stop_win_ratio": 1.1,
+    "strategies": {
+        "red": [
+            ["B", "R", "B", "R", "B"],
+            ["B", "B", "B", "B", "B"]
+        ],
+        "black": [
+            ["R", "B", "R", "B", "R"],
+            ["R", "R", "R", "R", "R"]
+        ]
+    }
+}
+
+
 Para executar o bot:
 
 python bot.py
