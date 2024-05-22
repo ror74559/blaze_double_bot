@@ -12,7 +12,7 @@ This Python script automates the betting process on the Blaze Double website usi
 
 To install and use the bot, follow these steps:
 
-git clone https://github.com/seu-usuario/blaze-double-bot.git
+git clone https://github.com/ror74559/blaze-double-bot.git
 
 cd blaze-double-bot
 
@@ -68,7 +68,7 @@ python bot.py
 
 If you find this project helpful, consider supporting it by making a donation. Your contribution will help me maintain and improve this bot.
 
-[Donate via PayPal](https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO)
+[Donate via PayPal]([https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA))
 
 ---
 
@@ -92,7 +92,7 @@ Este script em Python automatiza o processo de apostas no site Blaze Double usan
 
 Para instalar e usar o bot, siga estes passos:
 
-git clone https://github.com/seu-usuario/blaze-double-bot.git
+git clone https://github.com/ror74559/blaze-double-bot.git
 
 cd blaze-double-bot
 
@@ -148,7 +148,7 @@ python bot.py
 
 Se você achar este projeto útil, considere apoiá-lo fazendo uma doação. Sua contribuição ajudará a manter e melhorar este bot.
 
-[Doar via PayPal](https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO)
+[Doar via PayPal]([https://www.paypal.com/donate?hosted_button_id=SEU-CÓDIGO-DO-BOTÃO](https://www.paypal.com/donate/?hosted_button_id=928TRAX74TYSA))
 
 ---
 
